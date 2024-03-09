@@ -1,0 +1,191 @@
+:root {
+    --clr-primary-500: hsl(0, 36%, 70%);
+    --clr-primary-400: hsl(0, 93%, 68%);
+    --clr-secondary-300: hsl(0, 0%, 100%), to hsl(0, 100%, 98%);
+    --clr-secondary-200: hsl(0, 80%, 86%), to hsl(0, 74%, 74%);
+    
+    --clr-neutral-300: hsl(0, 6%, 24%);
+
+    --ff-base: "Josefin Sans", sans-serif;
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-bold: 600;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--ff-base);
+  font-size: 16px;
+  background-image: url("images/bg-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  width: 450px;
+}
+
+.logo {
+  position: relative;
+}
+
+.title {
+  padding-top: 100px;
+  color: var(--clr-primary-500);
+  font-weight: var(--fw-light);
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 4.5rem;
+}
+
+.sub-title {
+  color: var(--clr-neutral-300);
+  letter-spacing: 15px;
+  text-transform: uppercase;
+  font-weight: var(--fw-bold);
+  font-size: 4rem;
+}
+
+.info {
+  color: var(--clr-primary-500);
+  padding: 20px 0;
+  font-size: 1.025rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.5;
+}
+
+.hero {
+  
+}
+
+.hero img {
+  width: 100%;
+  height: 100vh;
+}
+
+/****************** Input & Button ******************/
+.inputButton {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 20px;
+}
+
+input[type=email] {
+  background-color: transparent;
+  border: 1px solid var(--clr-primary-500);
+  border-radius: 50px;
+  padding: 20px;
+  width: 450px;
+  height: 55px;
+}
+
+input[type=email]:focus {
+  outline: 1px solid var(--clr-primary-500);
+  z-index: -1;
+}
+
+.errorIcon {
+  display: none;
+  width: 20px;
+  height: 20px;
+  background-image: url("images/icon-error.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 70%;
+}
+
+input:invalid {
+  background-color: transparent;
+  border: none;
+  outline: 2px solid var(--clr-primary-400);
+  border-radius: 50px;
+}
+
+.errorMessage {
+  display: none;
+  position: absolute;
+  text-align: center;
+  right: 58%;
+  top: 125%;
+  font-size: 0.825rem;
+  color: var(--clr-primary-400);
+}
+
+.inputButton button {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(248,191,191,1) 1%, rgba(238,140,140,1) 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 20px;
+  width: 100px;
+  height: 55px;
+  left: 78%;
+  position: absolute;
+  box-shadow: 0px 5px 15.5px var(--clr-primary-500);
+}
+
+.inputButton button:hover {
+  background: linear-gradient(135deg, rgb(255, 220, 220) 1%, rgb(241, 174, 174) 100%);
+}
+/****************************************************/
